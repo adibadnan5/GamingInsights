@@ -41,7 +41,7 @@ DATA_PATH = (
 MODEL_PATH = (
     PROJECT_ROOT
     / "models"
-    / "gaming_addiction_prediction_model_compatible.joblib"
+    / "gaming_addiction_prediction_model_py311.joblib"
 )
 
 
