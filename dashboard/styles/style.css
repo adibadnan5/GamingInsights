@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#080b16;--surface:#101528;--surface2:#151c32;--border:rgba(255,255,255,.09);--text:#f4f5ff;--muted:#929bb5;--purple:#9270ff;--blue:#43a5ff;--cyan:#4de1db;--gradient:#287fe0}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;min-height:100vh}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,90%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(8,11,22,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.navbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;white-space:nowrap}
+.logo-icon{width:38px;height:38px;border-radius:11px;background:#287fe0;display:grid;place-items:center;font-size:20px}
+.gradient-text{background:#287fe0;-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{font-size:11px;font-weight:650;color:var(--muted);white-space:nowrap;transition:.2s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:#c2b2ff}
+.nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:#287fe0;border-radius:3px}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:25px;cursor:pointer}
+main{min-height:75vh}
+section{padding:78px 0}
+.hero{padding:100px 0 90px;background:#101528}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px}
+.eyebrow,.section-label{font-size:11px;font-weight:800;letter-spacing:2px;color:#ae96ff;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:clamp(40px,6vw,66px);line-height:1.1;letter-spacing:-2px;margin-bottom:22px}
+h1,h2,h3,h4{line-height:1.25}
+.hero p,.lead,.muted{color:var(--muted)}
+.hero p{max-width:560px;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:9px;font-size:12px;font-weight:750;transition:.2s;border:1px solid var(--border)}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:#287fe0;border:0;color:#fff}
+.btn-secondary{background:rgba(255,255,255,.03)}
+.panel,.card,.stat-card,.chart-card,.feature-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:15px}
+.panel{padding:23px;box-shadow:0 25px 70px rgba(0,0,0,.25)}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.panel-head h3{font-size:14px}
+.pill{font-size:10px;padding:5px 9px;border-radius:30px;background:rgba(83,223,189,.1);color:#65d8b5}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.stat-card{padding:22px}
+.stat-icon,.feature-icon{width:42px;height:42px;border-radius:11px;background:rgba(146,112,255,.13);display:grid;place-items:center;font-size:20px;margin-bottom:15px}
+.stat-card h3{font-size:27px;margin-bottom:5px}
+.stat-card p{font-size:11px;color:var(--muted)}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.section-head{max-width:700px;margin-bottom:28px}
+.section-title{font-size:clamp(28px,4vw,40px);margin-bottom:12px;letter-spacing:-1px}
+.lead{font-size:13px;max-width:720px}
+.card,.feature-card,.chart-card,.info-card{padding:24px}
+.card h3,.feature-card h3,.chart-card h3{font-size:16px;margin-bottom:10px}
+.card p,.feature-card p,.chart-card p,.info-card p{font-size:12px;color:var(--muted)}
+.feature-icon{width:48px;height:48px;font-size:22px}
+.bar-list{display:grid;gap:18px;margin-top:20px}
+.bar-row{display:grid;gap:7px}
+.bar-label{display:flex;justify-content:space-between;font-size:11px;color:#dfe2f3}
+.track{height:8px;border-radius:20px;background:#252d46;overflow:hidden}
+.fill{height:100%;background:#287fe0;border-radius:20px}
+.mini-bars{height:150px;display:flex;align-items:end;justify-content:space-around;gap:12px;border-bottom:1px solid var(--border);padding:0 8px;margin-top:18px}
+.mini-bars span{width:9%;background:#287fe0;border-radius:6px 6px 0 0;opacity:.9}
+.callout{padding:28px;border:1px solid rgba(67,165,255,.2);border-radius:15px;background:#151c32;margin-top:28px}
+.callout h3{font-size:18px;margin-bottom:8px}
+.callout p{font-size:12px;color:var(--muted)}
+.steps{display:grid;gap:14px;margin-top:22px}
+.step{display:flex;gap:13px;align-items:center;font-size:12px}
+.step-number{width:32px;height:32px;flex:0 0 32px;border-radius:9px;background:rgba(146,112,255,.15);color:#b59eff;display:grid;place-items:center;font-weight:800}
+.result-box{padding:27px;border-radius:15px;border:1px solid rgba(146,112,255,.25);background:#151c32}
+.result-value{font-size:35px;font-weight:800;color:#b59eff;margin:12px 0 4px}
+table{width:100%;border-collapse:collapse;min-width:600px;text-align:left}
+th{font-size:10px;color:var(--muted);font-weight:650;padding:14px;border-bottom:1px solid var(--border)}
+td{font-size:11px;padding:16px 14px;border-bottom:1px solid var(--border)}
+.table-wrap{overflow-x:auto;margin-top:25px;padding:12px 20px;background:var(--surface);border:1px solid var(--border);border-radius:14px}
+footer{border-top:1px solid var(--border);padding:30px 0;background:#080b16}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+footer p,.footer-links a{font-size:11px;color:var(--muted)}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.note{font-size:10px;color:#7f89a5;margin-top:16px}
+@media(max-width:1050px){.nav-links{gap:12px}.nav-links a{font-size:10px}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:850px){.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:76px;left:0;width:100%;padding:22px 5%;background:#101528;border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;gap:18px}.nav-links.show{display:flex}.nav-links a{font-size:13px}.nav-links a.active:after{display:none}.hero-grid,.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){section{padding:60px 0}.hero{padding:75px 0}.stats-grid,.grid-3{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}.footer-inner{align-items:flex-start;flex-direction:column}.actions .btn{width:100%}}
+
+
+/* GamingInsight Streamlit integration layer */
+[data-testid="stAppViewContainer"]{background:var(--bg);color:var(--text)}
+[data-testid="stHeader"]{background:rgba(8,11,22,.96)}
+[data-testid="stSidebar"],[data-testid="collapsedControl"]{display:none!important}
+.block-container{width:100%!important;max-width:none!important;margin:0!important;padding:0 clamp(16px,2.2vw,36px) 3rem!important;box-sizing:border-box!important}
+.gi-topbar{width:100%;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:15px 0 18px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.gi-brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;white-space:nowrap}
+.gi-logo-icon{width:40px;height:40px;border-radius:11px;background:#287fe0;display:grid;place-items:center;font-size:21px}
+.gi-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.5vw,22px);flex-wrap:wrap}
+.gi-nav a{position:relative;color:var(--muted);font-size:11px;font-weight:700;white-space:nowrap;padding:9px 0}
+.gi-nav a:hover,.gi-nav a.active{color:#c2b2ff}
+.gi-nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:2px;background:#287fe0;border-radius:3px}
+.gi-status-line{display:flex;gap:24px;flex-wrap:wrap;color:var(--muted);font-size:10px;padding:0 0 12px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.gi-status-line b{color:var(--text)}
+.hero{padding:62px 0 58px;background:#101528}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:42px}
+.hero h1{font-size:clamp(40px,5.3vw,66px);line-height:1.1;letter-spacing:-2px;margin-bottom:22px}
+.hero p{max-width:560px;font-size:14px;color:var(--muted)}
+.hero-tagline{margin-top:16px}
+.gi-hero-stats{grid-template-columns:repeat(2,1fr);margin-top:0;gap:12px}
+.gi-hero-stats .stat-card{padding:17px}
+.gi-hero-stats .stat-card h3{font-size:25px}
+.gi-mini-chart{padding:20px 4px 0}
+.gi-mini-chart h3{font-size:15px}
+.gi-platform-head{margin:24px 0 12px}
+.main-title{font-size:2.2rem;font-weight:800;color:var(--text);margin:20px 0 0}
+.subtitle{color:var(--muted);font-size:1rem;margin-bottom:1.5rem}
+div[data-testid="stMetric"]{background:var(--surface);border:1px solid var(--border);padding:17px;border-radius:14px}
+div[data-testid="stMetric"] label,div[data-testid="stMetric"] [data-testid="stMetricLabel"]{color:var(--muted)}
+div[data-testid="stMetric"] [data-testid="stMetricValue"]{color:var(--text)}
+.stSelectbox label,.stNumberInput label,.stSlider label{color:var(--text)!important}
+.stButton button,[data-testid="stFormSubmitButton"] button{background:#287fe0;color:#fff;border:0;border-radius:9px;font-weight:750}
+.stButton button:hover,[data-testid="stFormSubmitButton"] button:hover{border:0;color:#fff;filter:brightness(1.08)}
+[data-testid="stPlotlyChart"]{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;overflow:hidden!important;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:8px}
+.result-card{background:var(--surface);border:1px solid var(--border);color:var(--text)}
+.disclaimer{background:rgba(255,180,70,.10);border-left:4px solid #ffad45;color:#f5d6a4}
+[data-testid="stDataFrame"]{border:1px solid var(--border);border-radius:12px}
+div[data-testid="stAlert"]{border-radius:12px}
+@media(max-width:1000px){.gi-topbar{align-items:flex-start;flex-direction:column}.gi-nav{justify-content:flex-start}.hero-grid{grid-template-columns:1fr}.block-container{padding:0 1.4rem 2rem!important}}
+@media(max-width:600px){.gi-nav{gap:9px 14px}.gi-nav a{font-size:10px}.gi-hero-stats{grid-template-columns:repeat(2,1fr)}.hero{padding:36px 0}.hero h1{font-size:40px}}
+
+
+/* Light/Dark mode control */
+[data-testid="stToggle"] label { font-weight: 650 !important; }
+[data-testid="stToggle"] [role="switch"] { accent-color: #9270ff; }
+.gi-topbar-brand { border-bottom: 0; margin-bottom: 0; padding-bottom: 12px; }
+[data-testid="stPlotlyChart"]{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;overflow:hidden!important}
+[data-testid="stDataFrame"] { overflow: hidden; }
+
+
+/* Button contrast fix: use a solid blue fill instead of the purple-blue gradient */
+.btn-primary,
+.stButton button,
+[data-testid="stFormSubmitButton"] button {
+    background: #287fe0 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #287fe0 !important;
+    opacity: 1 !important;
+}
+
+.btn-primary:hover,
+.stButton button:hover,
+[data-testid="stFormSubmitButton"] button:hover {
+    background: #1f6fc9 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #1f6fc9 !important;
+    filter: none !important;
+}
+
+/* Keep the secondary CTA dark with readable blue text */
+.btn-secondary {
+    background: #101528 !important;
+    background-image: none !important;
+    color: #43a5ff !important;
+    -webkit-text-fill-color: #43a5ff !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+}
+
+
+/* Solid-colour GamingTrivia page */
+.gtrivia-shell { background:#080b16; color:#f4f5ff; }
+.gtrivia-card { background:#101528; border:1px solid rgba(255,255,255,.10); border-radius:14px; padding:18px; }
+.gtrivia-accent { color:#4de1db; }
+.gtrivia-muted { color:#929bb5; }
+.gtrivia-prize { background:#151c32; border:1px solid rgba(77,225,219,.25); border-radius:12px; padding:14px; }
+.gtrivia-question { background:#101528; border:1px solid rgba(77,225,219,.25); border-radius:14px; padding:20px; }
+.gtrivia-progress { color:#4de1db; font-weight:700; }
+
+/* GamingTrivia: solid-colour UI layer */
+.gt-panel, .gt-card, .gt-quizbox, .gt-result { background: #121b30 !important; }
+.gt-art, .gt-image-placeholder, .gt-difficulty { background: #17243b !important; }
+.gt-stat { background: #0c1425 !important; }
+
+
+/* =========================================================
+   GamingInsights: responsive layout and theme consistency
+   ========================================================= */
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+[data-testid="stMainBlockContainer"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stHorizontalBlock"],
+[data-testid="stVerticalBlock"],
+[data-testid="stColumn"] {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stPlotlyChart"],
+[data-testid="stPlotlyChart"] > div,
+[data-testid="stPlotlyChart"] .js-plotly-plot,
+[data-testid="stPlotlyChart"] .plot-container,
+[data-testid="stPlotlyChart"] .svg-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stPlotlyChart"] {
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+
+[data-testid="stDataFrame"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Light-mode text, navigation and widgets */
+:root {
+    color-scheme: light;
+}
+[data-testid="stAppViewContainer"].gi-light,
+[data-testid="stMain"].gi-light {
+    color: var(--text) !important;
+}
+
+
+/* =========================================================
+   GamingInsights final layout: centered content with edge gaps
+   Fixed dark theme; no light/dark toggle.
+   ========================================================= */
+.block-container,
+[data-testid="stMainBlockContainer"] {
+    width: 100% !important;
+    max-width: 1760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 22px clamp(22px, 3vw, 48px) 48px !important;
+    box-sizing: border-box !important;
+}
+
+.gi-topbar-brand {
+    width: 100% !important;
+    margin: 0 auto 18px !important;
+    padding: 8px 0 16px !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 14px auto 28px !important;
+    padding: 72px clamp(24px, 3.2vw, 52px) 66px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 18px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.hero-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.hero-grid > * {
+    min-width: 0 !important;
+}
+
+.panel {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+    .block-container,
+    [data-testid="stMainBlockContainer"] {
+        padding: 16px 18px 32px !important;
+    }
+
+    .hero {
+        padding: 42px 24px !important;
+        margin-top: 10px !important;
+    }
+
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 28px !important;
+    }
+}
+
+@media (max-width: 560px) {
+    .block-container,
+    [data-testid="stMainBlockContainer"] {
+        padding: 12px 12px 24px !important;
+    }
+
+    .hero {
+        padding: 30px 18px !important;
+        border-radius: 14px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 9vw, 42px) !important;
+        letter-spacing: -1px !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .gi-topbar-brand {
+        padding: 6px 0 12px !important;
+    }
+}
+
+/* Ensure the dark palette remains consistent across Streamlit and Plotly. */
+:root {
+    color-scheme: dark;
+    --bg: #080b16;
+    --surface: #101528;
+    --surface2: #151c32;
+    --border: rgba(255,255,255,.09);
+    --text: #f4f5ff;
+    --muted: #929bb5;
+    --purple: #9270ff;
+    --blue: #43a5ff;
+    --cyan: #4de1db;
+}
