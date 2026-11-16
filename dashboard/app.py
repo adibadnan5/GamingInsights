@@ -1280,7 +1280,7 @@ elif page == "Prediction History":
 
     st.markdown(
         '<p class="subtitle">'
-        'Review predictions previously generated and saved in MongoDB.'
+        'Review predictions previously generated and saved in Supabase.'
         '</p>',
         unsafe_allow_html=True
     )
